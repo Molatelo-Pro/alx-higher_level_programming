@@ -1,7 +1,7 @@
 #!/usr/bin/python3
  if a < b:
-        return c
+        return (c)
     elif c > b:
-        return a + b
+        return (a + b)
     else:
-        return (a * b) - c
+        return (a*b - c)
