@@ -1,7 +1,7 @@
 #!/usr/bin/pytho3
 def remove_char_at(str, n):
- new_str = ""
- for i, c in enumerate(str):
-     if i !=n:
-         new_str += c
-         return new_str
+if n < 0:
+    return str
+else:
+    str = str[0:n] + str[n:1:]
+    return str
