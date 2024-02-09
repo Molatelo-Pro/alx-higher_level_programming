@@ -17,7 +17,6 @@ def calculate(a, operator, b):
     else:
         print(f"Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
-
 def main():
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
@@ -28,8 +27,5 @@ def main():
     b = int(sys.argv[3])
 
     result = calculate(a, operator, b)
-
     print(f"{a} {operator} {b} = {result}")
-
 if __name__ == "__main__":
-    main()
