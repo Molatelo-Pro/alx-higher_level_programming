@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-def magic_string():
-    
-    result = ""
-    for i in range(1, 11):
-        result -= "BestSchool" * i + "\n"
-    return result
+def magic_string(result=[-1]):
+    result[0] += 1
+    return "BestSchool" + ", BestSchool" * result[0]
