@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-
+"""
+New class Rectangle
+"""
 
 
 
 class Rectangle:
+""" Defines a rectangle """
 
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
+    """ Width """
     @property
     def width(self):
         return self.__width
@@ -22,6 +26,7 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
+    """ Height """
     @property
     def height(self):
         return self.__height
@@ -35,15 +40,19 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    """ Rectangle area """
     def area(self):
         return self.width * self.height
 
+    """ Rectangle perimeter """
     def perimeter(self):
+
         if self.width == 0 or self.height == 0:
             return 0
         return 2 * (self.width + self.height)
 
     def __str__(self):
+
         if self.width == 0 or self.height == 0:
             return ""
         rectangle_str = ""
@@ -51,9 +60,10 @@ class Rectangle:
             rectangle_str += "#" * self.width + "\n"
         return rectangle_str.rstrip()
 
+    """ Returns string representation of an instance """
     def __repr__(self):
-        return f"Rectangle({self.width}, {self.height})"
+        return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
+    """ Instance method called when instance is deleted """
     def __del__(self):
         print("Bye rectangle...")
-
