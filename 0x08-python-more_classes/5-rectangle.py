@@ -4,37 +4,34 @@ New class Rectangle
 """
 
 
-
 class Rectangle:
-""" Defines a rectangle """
+    """ Defines a rectangle """
 
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
-    """ Width """
+    """ WIDTH """
     @property
     def width(self):
-        return self.__width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
-
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
-    """ Height """
+    """ HEIGHT """
     @property
     def height(self):
-        return self.__height
+        return (self.__height)
 
     @height.setter
     def height(self, value):
-
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
@@ -42,28 +39,31 @@ class Rectangle:
 
     """ Rectangle area """
     def area(self):
-        return self.width * self.height
+        return (self.__height * self.__width)
 
     """ Rectangle perimeter """
     def perimeter(self):
+        if self.width == 0:
+            return (0)
+        if self.height == 0:
+            return (0)
+        return (2 * (self.__height + self.__width))
 
-        if self.width == 0 or self.height == 0:
-            return 0
-        return 2 * (self.width + self.height)
-
+    """ Returns printable string representation
+    of an instance
+    """
     def __str__(self):
+        empty_string = ""
 
-        if self.width == 0 or self.height == 0:
-            return ""
-        rectangle_str = ""
-        for _ in range(self.height):
-            rectangle_str += "#" * self.width + "\n"
-        return rectangle_str.rstrip()
+        if self.__width == 0 or self.__height == 0:
+            return (empty_string)
 
-    """ Returns string representation of an instance """
+        return ((('#' * self.width) + "\n") * self.height)[:-1]
+
+    """ Returns an “official” string representation of an instance """
     def __repr__(self):
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
-    """ Instance method called when instance is deleted """
+    """ Instance method called when an instance is deleted """
     def __del__(self):
         print("Bye rectangle...")
