@@ -13,4 +13,4 @@ SELECT tv_genres.name
        LEFT JOIN dexter_genres
        ON dexter_genres.id = tv_genres.id
        WHERE dexter_genres.id is NULL
-       ORDER BY tv_genres.name;
+       ORDER BY tv_genres.name ASC;
